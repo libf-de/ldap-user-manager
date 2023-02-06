@@ -812,7 +812,7 @@ function ldap_complete_attribute_array($default_attributes,$additional_attribute
 
 function ldap_new_account($ldap_connection,$account_r) {
 
-  global $log_prefix, $LDAP, $LDAP_DEBUG, $DEFAULT_USER_SHELL, $DEFAULT_USER_GROUP;
+  global $log_prefix, $LDAP, $LDAP_DEBUG, $DEFAULT_USER_SHELL, $DEFAULT_USER_GROUP, $HOMES_DIRECTORY;
 
   if (    isset($account_r['givenname'][0])
       and isset($account_r['sn'][0])
@@ -862,7 +862,7 @@ function ldap_new_account($ldap_connection,$account_r) {
      }
 
      if (empty($account_attributes['loginshell']))    { $account_attributes['loginshell']    = $DEFAULT_USER_SHELL; }
-     if (empty($account_attributes['homedirectory'])) { $account_attributes['homedirectory'] = "/home/" . $account_r['uid'][0]; }
+     if (empty($account_attributes['homedirectory'])) { $account_attributes['homedirectory'] = "$HOMES_DIRECTORY" . $account_r['uid'][0]; }
 
      $add_account = @ ldap_add($ldap_connection,
                                "{$LDAP['account_attribute']}=$account_identifier,{$LDAP['user_dn']}",

@@ -572,6 +572,8 @@ EoRenderEmailJS;
 
 function render_js_homedir_generator($username_field_id,$homedir_field_id) {
 
+  global $HOMES_DIRECTORY;
+
   print <<<EoRenderHomedirJS
 <script>
 
@@ -581,7 +583,7 @@ function render_js_homedir_generator($username_field_id,$homedir_field_id) {
 
   if ( auto_homedir_update == true ) {
     var username = document.getElementById('$username_field_id').value;
-    document.getElementById('$homedir_field_id').value = "/home/" + username;
+    document.getElementById('$homedir_field_id').value = "$HOMES_DIRECTORY" + username;
   }
 
  }

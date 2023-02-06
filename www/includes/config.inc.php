@@ -119,6 +119,8 @@
 
  $EMAIL_DOMAIN = (getenv('EMAIL_DOMAIN') ? getenv('EMAIL_DOMAIN') : Null);
 
+ $HOMES_DIRECTORY = (getenv('HOMES_DIRECTORY') ? getenv('HOMES_DIRECTORY') : '/home/');
+
  $default_email_from_domain = ($EMAIL_DOMAIN ? $EMAIL_DOMAIN : 'ldapusermanger.org');
 
  $EMAIL['from_address'] = (getenv('EMAIL_FROM_ADDRESS') ? getenv('EMAIL_FROM_ADDRESS') : "admin@" . $default_email_from_domain );

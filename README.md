@@ -156,6 +156,8 @@ These settings should only be changed if you're trying to make the user manager 
 * `DEFAULT_USER_SHELL` (default: */bin/bash*):  The shell that will be launched when the user logs into a server.
    
 * `EMAIL_DOMAIN` (no default):  If set then the email address field will be automatically populated in the form of `username@email_domain`.
+
+* `HOMES_DIRECTORY` (/home/):  Where to create home directories by default, **must include trailing slash!**
    
 * `ENFORCE_SAFE_SYSTEM_NAMES` (default: *TRUE*):  If set to `TRUE` (the default) this will check system login and group names against `USERNAME_REGEX` to ensure they're safe to use on servers.  See [Account names](#account-names) for more information.
    
